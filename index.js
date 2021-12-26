@@ -1,6 +1,8 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
+const cors =require("cors")
+
 
 
 // Import models 
@@ -13,6 +15,7 @@ const app = express()
 // Define Database Connection 
 const db = mongoose.connect('mongodb://localhost:27017/first-node-api-db')
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
